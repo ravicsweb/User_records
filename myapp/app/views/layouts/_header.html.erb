@@ -1,0 +1,15 @@
+<header>
+    <table colpadding="1">
+      <tr>
+        <td><%= link_to "Home", root_path %></td>
+      <% if session[:user_id] %>
+       
+        <td> <%= link_to "Sign out", session_url, :method => 'delete' %> <td>
+         <td> <%= session[:user_email]%></td>  
+      <% else %>
+        <td> <%= link_to "Sign in", new_session_url %></td>
+        <td> <%= link_to "Sign up", new_user_url %></td>
+      <% end %>
+      </tr>
+    </table>
+</header>

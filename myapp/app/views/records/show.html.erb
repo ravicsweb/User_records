@@ -1,0 +1,48 @@
+<h1>User</h1>
+<% if session[:user_id] %>
+<p>
+  <strong>Name:</strong>
+  <%=@record.fname %> &nbsp;<%=@record.lname%>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @record.address %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @record.email %>
+</p>
+<p>
+  <strong>Phone No:</strong>
+  <%= @record.cell_no %>
+</p>
+<p>
+  <strong>Gender:</strong>
+  <%= @record.gender %>
+</p>
+<p>
+  <strong>Date of Birth:</strong>
+  <%= @record.bdate %>
+</p>
+<p>
+  <strong>City:</strong>
+  <%= @record.city %>
+</p>
+<p>
+  <strong>Hobbies:</strong>
+  <%= @record.hobbies %>
+</p>
+<p>
+   <strong>Image</strong>
+  <%= image_tag @record.avatar.url(),:width => 100, :height => 100 %>
+  
+</p>
+
+<p><%= link_to "Edit", edit_record_path(@record) %></p>
+<p><%= link_to "View All",records_path %></p>
+
+<% else %>
+<p>
+  Please Sign in......!
+</p> 
+<% end %>

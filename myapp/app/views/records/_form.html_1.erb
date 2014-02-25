@@ -1,0 +1,68 @@
+<%= form_tag("/display", method:"post") do %>
+<table>
+  <tr>
+    <th>Details</th>
+  </tr>
+  <tr>
+    <td>First Name
+    <td><%= text_field_tag :fname %>
+
+  </tr>
+  <tr>
+    <td>Last Name
+    <td><%= text_field_tag :lname %>
+  </tr>
+  <tr>
+    <td>Email
+    <td><%= text_field_tag :email %>
+  </tr>
+   <tr>
+    <td>Cell No.
+    <td><%= text_field_tag :cno %>
+  </tr>
+  <tr>
+    <td> Address
+    <td><%= text_area_tag :address %>
+  </tr>
+  <tr>
+    <td>Size
+    <td>  <%= check_box_tag 'checked[]', 'small' %>small
+          <%= check_box_tag 'checked[]', 'medium' %>medium
+          <%= check_box_tag 'checked[]', 'large' %>large
+  </tr>
+  <tr>
+    <td> City
+    <td>
+     <%= select_tag "city", options_for_select([ "rajkot", "surat","Ahmedabad" ], "Select")%>
+  <!--<select name="city">
+    <option value="rajkot">rajkot</option>
+    <option value="surat">surat</option>
+    <option value="ahmedabad">ahmedabad</option>
+  </select> -->
+  
+  </tr>
+  <tr>
+    <td> Sex
+    <td><%=radio_button_tag 'gender', 'male',true%>Male
+      <%=radio_button_tag 'gender', 'female'%>Female
+     <!-- <input name="sex" type="radio" value="male" checked="true"/>Male
+      <input name="sex" type="radio" value="female" />Female-->
+      
+      
+  </tr>
+  <tr>
+    <td> Date of Birth
+    <td>
+      <%=  date_select(:date, "written_on", start_year: 1950, end_year: 2014,prompt: { day: 'DD', month: 'MM', year: 'YYYY' },use_month_numbers: true) %>
+      <!--<%= select_day(Date.today)%>
+          <%= select_month(Date.today)%>
+          <%= select_year(Date.today, :start_year => 1980, :end_year => 2014) %>-->
+  </tr>
+    
+  <tr>
+    <td> <%= submit_tag "Save" %><input type="reset" value="Clear" />
+  </tr>
+ </table>  
+<% end %>
+
+

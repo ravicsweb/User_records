@@ -1,0 +1,18 @@
+
+<h1>Create User Record</h1>
+<% if session[:user_id] %>
+<%= form_for (@record) do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+<%= render 'form', :f => f %>
+  <div>
+    <%= f.submit "Save" %><input type="reset" value="Clear" />
+   
+  </div> 
+
+<% end %>
+<p><%= link_to "Back", root_path %></p>
+<% else %>
+<p>
+  Please Sign in......!
+</p> 
+<% end %>

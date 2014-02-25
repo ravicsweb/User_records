@@ -1,0 +1,6 @@
+<%  if @user.email=='ravi@gmail.com'%>
+<b> welcom admin user</b>
+<% else %>
+<b> welcom local user</b>
+<% end %>
+<p><%= link_to "Edit", edit_user_path(@user) %></p>
